@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "Short API",
+    "_postman_id": "12345-67890",
+    "description": "Collection to test URL Shortener backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Shorten URL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"original_url\": \"https://www.google.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/shorten",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["shorten"]
+        }
+      }
+    },
+    {
+      "name": "Get All URLs",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/urls",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "urls"]
+        }
+      }
+    },
+    {
+      "name": "Redirect (replace with ID)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/{{id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["{{id}}"]
+        }
+      }
+    }
+  ]
+}
